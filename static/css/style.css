@@ -1,0 +1,84 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    margin: 0;
+}
+
+.navbar {
+    background: #222;
+    padding: 15px 40px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+.hero {
+    padding: 120px;
+    text-align: center;
+}
+
+.btn {
+    background: #28a745;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 25px;
+    text-decoration: none;
+}
+
+.predict-section {
+    padding: 60px;
+    text-align: center;
+}
+
+.preview img {
+    width: 250px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,.2);
+}
+
+.result-box {
+    margin-top: 25px;
+    background: white;
+    padding: 20px;
+    display: inline-block;
+    box-shadow: 0 0 10px rgba(0,0,0,.1);
+}
+.hero {
+    padding: 120px;
+    text-align: center;
+    color: white;              /* ensures text is readable */
+    background: url('../images/bg-home.jpg') no-repeat center center;
+    background-size: cover;     /* makes it fill the section */
+    position: relative;
+}
+
+/* Optional: add overlay for better contrast */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.4);  /* dark overlay */
+    z-index: 0;
+}
+
+.hero h1,
+.hero p,
+.hero .btn {
+    position: relative;  /* keep text above overlay */
+    z-index: 1;
+}
+.hero {
+    height: 100vh;   /* full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+

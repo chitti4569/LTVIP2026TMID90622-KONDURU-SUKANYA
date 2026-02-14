@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NutriGaze | Predict</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<header class="navbar">
+    <h2>NUTRIGAZE</h2>
+    <nav>
+        <a href="{{ url_for('home') }}">Home</a>
+        <a class="active" href="{{ url_for('predict') }}">Predict</a>
+    </nav>
+</header>
+
+<section class="predict-section">
+
+    <h2>Image Classification</h2>
+
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="pc_image" required>
+        <button class="btn green" type="submit">Predict</button>
+    </form>
+
+  {% if image_path %}
+<div class="preview">
+    <h3>Uploaded Image</h3>
+    <img src="{{ url_for('static', filename='uploads/' + image_path) }}" alt="Preview">
+</div>
+{% endif %}
+
+{% if predict %}
+<div class="result-box">
+    <h3>Prediction</h3>
+    <p><strong style="color: {{ 'red' if predict == 'Out of Dataset' else '#28a745' }}">
+        {{ predict }}
+    </strong></p>
+    <p>Confidence: {{ "%.2f"|format(confidence) }}%</p>
+</div>
+{% endif %}</section>
+
+</body>
+</html>
